@@ -39,4 +39,13 @@ describe("Game", function() {
 
         game.score().should.equal(22);
     });
+
+    it("should correctly handle 1 strike", function () {
+        game.roll(10); // Score: 10
+        game.roll(7);
+        game.roll(2); // Score 10 + 9 + 9 (bonus)
+
+        rollMany(16, 0);
+        game.score().should.equal(28);
+    });
 });
