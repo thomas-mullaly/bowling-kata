@@ -54,4 +54,12 @@ describe("Game", function() {
 
         game.score().should.equal(300);
     });
+
+    it("should correctly handle spare then strike in last frame", function () {
+        rollMany(18, 0);
+        rollSpare();
+        game.roll(10);
+
+        game.score().should.equal(26); // 10 + 6 (bonus) + 10
+    });
 });
