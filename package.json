@@ -1,0 +1,14 @@
+{
+  "name": "bowling-kata",
+  "author": "Thomas Mullaly",
+  "email": "thomas.mullaly@gmail.com",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "mocha tests/*-spec.js"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "should": "^8.3.0"
+  }
+}
