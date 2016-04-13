@@ -48,4 +48,10 @@ describe("Game", function() {
         rollMany(16, 0);
         game.score().should.equal(28);
     });
+
+    it("should correctly handle perfect game", function () {
+        rollMany(12, 10);
+
+        game.score().should.equal(300);
+    });
 });
