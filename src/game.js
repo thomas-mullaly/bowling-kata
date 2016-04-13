@@ -14,14 +14,20 @@ class Game {
         let frameIndex = 0;
 
         for (let frame = 0; frame < 10; ++frame) {
-            let frameTotal = this._rolls[frameIndex] + this._rolls[frameIndex+1];
+            let frameTotal = 0;
 
-            if (frameTotal === 10) {
-                frameTotal += this._rolls[frameIndex+1];
+            if (this._rolls[frameIndex] === 10) {
+                frameTotal += 10 + this._rolls[frameIndex+1] + this._rolls[frameIndex+2];
+                frameIndex += 1;
+            } else if (this._rolls[frameIndex] + this._rolls[frameIndex+1] === 10) {
+                frameTotal += 10 + this._rolls[frameIndex+1];
+                frameIndex += 2;
+            } else {
+                frameTotal += this._rolls[frameIndex] + this._rolls[frameIndex+1];
+                frameIndex += 2;
             }
 
             score += frameTotal;
-            frameIndex += 2;
         }
 
         return score;
