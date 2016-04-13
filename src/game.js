@@ -14,15 +14,22 @@ class Game {
         let frameIndex = 0;
 
         for (let frame = 0; frame < 10; ++frame) {
+            let hadSpare = false;
+
             if (this._isStrike(frameIndex)) {
                 score += 10 + this._strikeBonus(frameIndex);
                 frameIndex += 1;
             } else if (this._isSpare(frameIndex)) {
                 score += 10 + this._spareBonus(frameIndex);
+                hadSpare = true;
                 frameIndex += 2;
             } else {
                 score += this._frameTotal(frameIndex);
                 frameIndex += 2;
+            }
+
+            if (frame === 9 && hadSpare) {
+                score += this._rolls[frameIndex];
             }
         }
 
