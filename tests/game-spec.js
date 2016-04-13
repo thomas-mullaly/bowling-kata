@@ -14,5 +14,15 @@ describe("Game", function() {
 
             game.score().should.equal(0);
         });
+
+        it("should return 20 for all ones", function () {
+            var game = new Game();
+
+            for (let i = 0; i < 20; ++i) {
+                game.roll(1);
+            }
+
+            game.score().should.equal(20);
+        });
     });
 });
