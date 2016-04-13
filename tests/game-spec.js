@@ -5,10 +5,15 @@ let Game = require("../src/game");
 
 describe("Game", function() {
     describe("roll", function() {
-        it("should return 0 for gutter game", function() {
-            let game = new Game();
+        const maxRolls = 20;
+        let game = null;
 
-            for (let i = 0; i < 20; ++i) {
+        beforeEach(function () {
+            game = new Game();
+        });
+
+        it("should return 0 for gutter game", function() {
+            for (let i = 0; i < maxRolls; ++i) {
                 game.roll(0);
             }
 
@@ -16,9 +21,7 @@ describe("Game", function() {
         });
 
         it("should return 20 for all ones", function () {
-            var game = new Game();
-
-            for (let i = 0; i < 20; ++i) {
+            for (let i = 0; i < maxRolls; ++i) {
                 game.roll(1);
             }
 
