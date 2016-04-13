@@ -33,7 +33,7 @@ describe("Game", function() {
         game.score().should.equal(20);
     });
 
-    it.skip("should correctly handle 1 spare", function () {
+    it("should correctly handle 1 spare", function () {
         game.roll(4);
         game.roll(6); // score: 16
         game.roll(6); // score: 22

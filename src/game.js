@@ -11,9 +11,17 @@ class Game {
 
     score() {
         let score = 0;
+        let frameIndex = 0;
 
-        for (let i = 0; i < this._rolls.length; ++i) {
-            score += this._rolls[i];
+        for (let frame = 0; frame < 10; ++frame) {
+            let frameTotal = this._rolls[frameIndex] + this._rolls[frameIndex+1];
+
+            if (frameTotal === 10) {
+                frameTotal += this._rolls[frameIndex+1];
+            }
+
+            score += frameTotal;
+            frameIndex += 2;
         }
 
         return score;
