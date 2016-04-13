@@ -17,25 +17,23 @@ describe("Game", function() {
         }
     };
 
-    it("should return 0 for gutter game", function() {
-        for (let i = 0; i < maxRolls; ++i) {
-            game.roll(0);
-        }
+    let rollSpare = () => {
+        game.roll(4);
+        game.roll(6);
+    };
 
+    it("should return 0 for gutter game", function() {
+        rollMany(maxRolls, 0);
         game.score().should.equal(0);
     });
 
     it("should return 20 for all ones", function () {
-        for (let i = 0; i < maxRolls; ++i) {
-            game.roll(1);
-        }
-
+        rollMany(maxRolls, 1);
         game.score().should.equal(20);
     });
 
     it("should correctly handle 1 spare", function () {
-        game.roll(4);
-        game.roll(6); // score: 16
+        rollSpare();
         game.roll(6); // score: 22
         rollMany(17, 0);
 
