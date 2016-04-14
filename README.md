@@ -1,10 +1,13 @@
 # bowling-kata
 
-Step up
+## Step up
 
 ```npm install -g mocha```
+
+then
+
 ```npm install .```
 
-Running tests
+## Running the tests
 
 ```npm test```
