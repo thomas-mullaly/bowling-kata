@@ -60,6 +60,6 @@ describe("Game", function() {
         rollSpare();
         game.roll(10);
 
-        game.score().should.equal(26); // 10 + 6 (bonus) + 10
+        game.score().should.equal(20); // 10 + 10
     });
 });
