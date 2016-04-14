@@ -57,7 +57,7 @@ class Game {
     }
 
     _spareBonus(rollIndex) {
-        return this._rolls[rollIndex+1];
+        return this._rolls[rollIndex+2];
     }
 
     _strikeBonus(rollIndex) {
