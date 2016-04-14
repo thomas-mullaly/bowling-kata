@@ -34,10 +34,10 @@ describe("Game", function() {
 
     it("should correctly handle 1 spare", function () {
         rollSpare();
-        game.roll(6); // score: 22
+        game.roll(7); // score: 24
         rollMany(17, 0);
 
-        game.score().should.equal(22);
+        game.score().should.equal(24);
     });
 
     it("should correctly handle 1 strike", function () {
